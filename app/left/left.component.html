@@ -1,0 +1,44 @@
+
+
+
+
+<input value="15off" #dis15 (change)="getDiscount(dis15.value)" type="radio" name="choose"><button style=" background-color:burlywood;  width: 100px; height: 100px;"> Discount Coupon <br>flat 15% off</button>
+<input value="8off" #dis8 (change)="getDiscount(dis8.value)" type="radio" name="choose"><button style="background-color:burlywood;  width: 100px; height: 100px;">Mega Sale Offer <br>flat 8% off</button>
+<input value="20off1000" #dis20 (change)="getDiscount(dis20.value)" type="radio" name="choose"><button style="background-color:burlywood;  width: 100px; height: 100px;">Welcome Back offer<br>20% off<br>upto:1000 Rs</button><h2>Product Information</h2>
+
+ 
+
+    <div class="userInfo">
+       Product Name: {{products[0].productName}} ,<br>
+       Product Amount: {{products[0].ammount}},<br> 
+       Units: {{products[0].units}}<br>
+    </div>
+    <br>
+    <br>
+    
+    <button (click)="doCalculate()" class="action">Go to Payment</button><br><br>
+   
+<table border="1">
+   <tr>
+      <th>Product Name</th>
+     
+      <th>Units</th>
+      <th>Product Amount</th>
+      <th>Total</th>
+   </tr>
+   <tr>
+      <td> {{products[0].productName}}</td>
+      
+      <td>{{products[0].units}}</td>
+      <td>{{products[0].ammount | currency : 'INR'}}<br><br>
+         Discount =&nbsp; {{discountamount }}<br><br>
+         
+         Gst&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{netbillamount*12/100}}<br></td>
+       <td> {{netbillamount+gst}}<br></td>
+   </tr>
+   
+</table>
+    <!--discountamount: {{discountamount }}<br>
+    totalbill: {{netbillamount+gst}}<br>
+    gst:{{netbillamount*12/100}}<br>-->
+    
